@@ -205,7 +205,7 @@ exports.data = async (req, res) => {
             });
         } else {
             // Check if an hour has passed since the last submission
-            const oneHour = 1000 * 60 * 60; // 1 hour in milliseconds
+            const oneHour = 1000 * 60 * 30; // 1 hour in milliseconds
             const lastSubmissionTime = new Date(existingRecord.lastSubmission);
             const timeDifference = currentTime - lastSubmissionTime;
 
