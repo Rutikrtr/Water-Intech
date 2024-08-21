@@ -3,7 +3,13 @@ const app = express();
 const cors = require('cors');
 require('dotenv').config();
 const PORT = process.env.PORT || 4006;
-app.use(cors());
+app.use(
+    cors({
+      origin: [process.env.FRONTEND_URL],
+      method: ["GET", "POST", "DELETE", "PUT"],
+      credentials: true,
+    })
+  );
 app.use(express.json());
 
 require('./config/db').connect();
